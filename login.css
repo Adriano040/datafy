@@ -1,0 +1,122 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #101820; /* لون الخلفية العام */
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-box {
+    background-color: #161d27; /* لون خلفية مربع تسجيل الدخول */
+    padding: 40px;
+    border-radius: 15px;
+    width: 350px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.login-box h2 {
+    color: #f2aa4c; /* لون عنوان الصفحة */
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    color: #f2aa4c; /* لون النص في الحقول */
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #222831; /* لون الخلفية للحقل */
+    color: #f2aa4c; /* لون النص في الحقول */
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border: 2px solid #00fff7; /* لون الحدود عند التركيز */
+}
+
+/* قسم "Forgot Password" */
+.forgot-password {
+    text-align: right; /* محاذاة النص لليمين */
+    margin-bottom: 20px;
+}
+
+.forgot-password a {
+    color: #00fff7; /* لون رابط "هل نسيت كلمة السر؟" */
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* الأزرار */
+button {
+    background-color: #f2aa4c;
+    color: #101820;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #e89c3e;
+    transform: scale(1.05);
+}
+
+/* قسم إنشاء حساب جديد */
+.create-account {
+    margin-top: 20px;
+}
+
+.create-account p {
+    color: #eaeaea;
+    font-size: 1rem;
+}
+
+.create-account-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #f2aa4c; /* لون خلفية الزر */
+    color: #101820; /* لون النص */
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.create-account-btn:hover {
+    background-color: #e89c3e; /* تغيير لون الخلفية عند التحويم */
+    transform: scale(1.05); /* تكبير بسيط عند التحويم */
+}

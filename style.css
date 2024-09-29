@@ -1,0 +1,565 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body & Fonts */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #101820;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    background: #101820;
+    padding: 20px 0;
+    position: relative;
+    z-index: 2;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+header .logo h1 {
+    color: #f2aa4c;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+header .logo span {
+    color: #f2aa4c;
+    font-size: 1rem;
+}
+
+/* Container for header */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Logo and subtitle */
+nav .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* محاذاة النص إلى اليسار */
+    margin-right: 30px; /* مسافة بين الشعار والقائمة */
+}
+
+nav .logo h1 {
+    font-size: 2rem; /* حجم الشعار */
+    color: #f2aa4c; /* لون الشعار */
+    margin: 0;
+}
+
+nav .logo h2 {
+    font-size: 1.2rem; /* حجم النص الفرعي */
+    color: #fff; /* لون النص الفرعي */
+    margin: 0;
+}
+
+/* Navigation */
+nav {
+    flex-grow: 1; /* يسمح لـ nav بأخذ المساحة المتبقية */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center; /* محاذاة العناصر في الوسط */
+}
+
+nav ul li {
+    margin-left: 30px; /* زيادة الهامش بين العناصر */
+}
+
+nav ul li a {
+    color: #f2aa4c;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 10px 15px; /* إضافة حشوة حول النص */
+    border-radius: 20px; /* حواف مستديرة */
+    transition: color 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* إضافة تأثيرات للخلفية */
+}
+
+nav ul li a:hover {
+    color: #fff;
+    transform: scale(1.05);
+    background-color: rgba(242, 170, 76, 0.2); /* تأثير خلفية عند التحويم */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: row; /* إبقاء الاتجاه أفقي */
+        justify-content: space-between; /* توزيع العناصر */
+        align-items: center; /* محاذاة العناصر في المركز */
+    }
+
+    nav ul {
+        margin-top: 0; /* إزالة الهامش العلوي */
+        width: auto; /* جعل العرض تلقائي */
+        align-items: center; /* محاذاة العناصر في الوسط */
+    }
+
+    nav ul li {
+        margin-left: 15px; /* تقليل الهامش الجانبي */
+    }
+
+    nav ul li a {
+        padding: 10px; /* زيادة الحشوة لجعل النص أكثر وضوحًا */
+        text-align: center; /* محاذاة النص في الوسط */
+    }
+}
+
+/* للهواتف الصغيرة */
+@media (max-width: 600px) {
+    header .logo h1 {
+        font-size: 2rem; /* تقليل حجم الشعار */
+    }
+
+    nav ul li a {
+        font-size: 1rem; /* تقليل حجم النص */
+    }
+
+    .header-buttons button {
+        padding: 8px 15px; /* تقليل حجم الأزرار */
+        font-size: 0.9rem; /* تقليل حجم النص في الأزرار */
+    }
+}
+
+/* Login & Create Account Buttons */
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.header-buttons button {
+    background-color: transparent;
+    border: 2px solid #f2aa4c;
+    padding: 12px 25px; /* مماثلة لزر Explore Our Services */
+    font-size: 1.1rem; /* مماثلة لزر Explore Our Services */
+    color: #f2aa4c; /* لون النص */
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* تأثير عند مرور المؤشر */
+.header-buttons button:hover {
+    background-color: #f2aa4c; /* مثل زر Explore Our Services */
+    color: #101820; /* يصبح النص باللون الأسود */
+    transform: scale(1.05); /* تكبير طفيف عند التمرير */
+}
+
+/* أزرار تسجيل الدخول */
+.header-buttons .login-btn {
+    border: 2px solid #f2aa4c; /* نفس لون Create Account */
+    color: #f2aa4c; /* نفس لون النص */
+    background-color: transparent;
+}
+
+/* تأثير عند مرور المؤشر على "Login" */
+.header-buttons .login-btn:hover {
+    background-color: #f2aa4c; /* نفس تأثير Create Account */
+    color: #101820; /* يصبح النص باللون الأسود عند التمرير */
+    transform: scale(1.05); /* تكبير طفيف عند التمرير */
+}
+
+/* تأثير النقر (Active State) */
+.header-buttons button:active {
+    transform: scale(0.98); /* تأثير الضغط */
+    box-shadow: none; /* إخفاء الظلال عند النقر */
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(145deg, #0d131a, #161d27);
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f2aa4c;
+}
+
+#hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #eaeaea;
+}
+
+#hero button {
+    background: transparent;
+    border: 2px solid #f2aa4c;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    color: #f2aa4c;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#hero button:hover {
+    background-color: #f2aa4c;
+    color: #101820;
+}
+
+/* About Section */
+#about {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #101820;
+    position: relative;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    z-index: 0;
+}
+
+#about h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #f2aa4c;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+}
+
+#about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #00fff7 50%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 50px;
+    z-index: 1;
+}
+
+#about p {
+    font-size: 1.2rem;
+    color: #eaeaea;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+#about p span {
+    color: #f2aa4c;
+    font-weight: bold;
+}
+
+/* Services Section */
+#services {
+    padding: 80px 20px;
+    background-color: #101820;
+    position: relative;
+}
+
+#services h2 {
+    text-align: center;
+    color: #f2aa4c;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+#services h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #00fff7 50%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 50px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.service-item {
+    background-color: #161d27;
+    padding: 40px;
+    border-radius: 20px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex; /* استخدام Flexbox */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    justify-content: space-between; /* جعل الزر في الأسفل */
+}
+
+.service-item::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 255, 247, 0.1);
+    border-radius: 50%;
+    animation: floating 6s ease-in-out infinite;
+}
+
+.service-item::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 255, 247, 0.1);
+    border-radius: 50%;
+    animation: floating 8s ease-in-out infinite;
+    animation-direction: reverse;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+.service-item:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.service-item h3 {
+    color: #f2aa4c;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.service-item p {
+    color: #eaeaea;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Open Sans', sans-serif;
+    opacity: 0.9;
+}
+
+.service-item button {
+    background-color: #f2aa4c;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    color: #101820;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: auto; /* إضافة هذا لتثبيت الزر في أسفل العنصر */
+}
+
+.service-item button:hover {
+    background-color: #e89c3e;
+    transform: scale(1.05);
+}
+
+
+
+/* Contact Section */
+#contact {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #101820;
+    position: relative;
+    overflow: hidden;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 255, 247, 0.1);
+    border-radius: 50%;
+    animation: floating 6s ease-in-out infinite;
+}
+
+#contact::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 255, 247, 0.1);
+    border-radius: 50%;
+    animation: floating 8s ease-in-out infinite;
+    animation-direction: reverse;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(20px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+#contact h2 {
+    color: #f2aa4c;
+    margin-bottom: 20px;
+    font-size: 36px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+}
+
+#contact p {
+    color: #eaeaea;
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#contact a {
+    color: #00fff7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact a:hover {
+    color: #00d1b2;
+}
+
+
+/* Footer */
+footer {
+    background-color: #101820;
+    padding: 40px 0;
+    text-align: center;
+    color: #eaeaea;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #00fff7 50%, rgba(255, 255, 255, 0) 100%);
+    border-radius: 50px;
+}
+
+footer a {
+    color:#f2aa4c ;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #f2aa4c;
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #f2aa4c; /* اللون الأساسي */
+    color:#101820 ; /* النص الأبيض لمظهر أنيق */
+    text-decoration: none;
+    border-radius: 50px; /* زوايا مستديرة بالكامل */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* إزالة الحدود */
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer; /* شكل المؤشر يدعم التفاعل */
+}
+
+.button:hover {
+    background-color: #d2953e; /* تغيير بسيط في اللون عند التحويم */
+    transform: scale(1.05); /* تكبير طفيف عند التحويم */
+}
+
+.button:active {
+    transform: scale(0.98); /* تأثير ضغط الزر */
+}
